@@ -206,7 +206,7 @@ body {
 /* 1440px */
 
 
-@media (max-width: 1440px) {
+@media (min-width:769px) and (max-width: 1440px) {
     
     .nueva-seccion {
         position: fixed; 
@@ -311,7 +311,7 @@ body {
 /* 768px */
 
 
-@media screen and (max-width: 768px) and (min-width:424px) {
+@media (max-width: 768px) and (min-width:424px) {
     
     .nueva-seccion {
         position: fixed; 
@@ -425,7 +425,7 @@ body {
 /* 425px */
 
 
-@media (max-width: 425px) {
+@media (max-width: 425px) and (min-width:320px) {
     
     .nueva-seccion {
         position: fixed; 
