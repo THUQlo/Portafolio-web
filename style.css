@@ -1,0 +1,561 @@
+body {
+    cursor: none; 
+    background-color: black;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* CURSOR */
+
+.custom-cursor {
+    position: fixed;
+    width: 20px; 
+    height: 20px; 
+    background-color: rgba(255, 255, 255, 0.7); 
+    border-radius: 50%; 
+    pointer-events: none; 
+    transition: width 0.2s ease, height 0.2s ease; 
+    z-index: 1000; 
+}
+
+
+.imagen-scroll {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    opacity: 0; 
+    transition: opacity 1s ease-in-out; 
+    z-index: 0; 
+}
+
+.imagen-scroll.visible {
+    opacity: 1; 
+}
+
+.imagen-scroll img {
+    height: 100%;
+}
+
+a, button {
+    cursor: none; 
+}
+
+body {      
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.logo-container {
+    background-color: black;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+.logo {
+    z-index: 2;
+    width: 60vh; 
+    transition: all 0.5s ease; 
+    position: absolute;
+}
+
+.logo-text {
+    padding-left: 1vw;
+    padding-top: 10%;
+    z-index: 2;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    color: white;
+    font-size: 24pt; 
+    transition: opacity 0.5s ease; /
+}
+
+.logo.fixed {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 350px; 
+}
+
+.logo-text.fixed {
+    opacity: 0; 
+    transition: opacity 0.5s ease;
+}
+
+
+.content {
+    height: 600px;
+    color: white;
+    background-color: black;
+    padding: 20px;
+    text-align: center;
+}
+
+.malparido {
+    font-size: 2vh;
+    padding-bottom: 4%;
+    position: relative;
+}
+
+.image-links {
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    margin-top: 20px;
+}
+
+.image-links a {
+    object-fit: cover;
+    z-index: 2;
+    display: block; 
+    overflow: hidden; 
+    background-color: black;
+    transition: transform 0.3s ease; 
+}
+
+.image-links1 {
+    z-index: 2;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    margin-top: 0px;
+}
+
+.image-links1 a {
+    z-index: 2;
+    height: auto;
+    display: block; 
+    overflow: hidden; 
+    background-color: none;
+    transition: transform 0.3s ease; 
+}
+
+.image-links1 {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; 
+    gap: 1vw;
+}
+
+.img-completa1 {
+    width: 100%; 
+    height: 100px; 
+    object-fit: contain;
+}
+
+.img-trabajos1,
+.img-servicios1 {
+    width: 100%; 
+    height: 100px;
+    object-fit: contain; 
+}
+
+.img-completa {
+    width: 5vw;
+    object-fit: contain;
+}
+
+.img-trabajos,
+.img-servicios {
+    width: 5vw; 
+    
+    object-fit: contain; 
+}
+
+.image-links a:hover {
+    transform: scale(1.1); 
+}
+
+.image-links1 a:hover {
+    transform: scale(1.1); 
+}
+
+
+.nueva-seccion {
+    position: fixed; 
+    bottom: -100vh; 
+    width: 100%;
+    height: 20vh; 
+    background-color: white;
+    transition: bottom 0.5s ease; 
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2); 
+    text-align: center;
+    z-index: 999;
+}
+
+.nueva-seccion h2 {
+    margin-bottom: 0;
+    font-weight: 900;
+}
+
+.nueva-seccion.visible {
+    bottom: 0; 
+}
+
+/* 1440px */
+
+
+@media (max-width: 1440px) {
+    
+    .nueva-seccion {
+        position: fixed; 
+        bottom: -100vh; 
+        width: 100%;
+        height: 20vh; 
+        background-color: white;
+        transition: bottom 0.5s ease; 
+        box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2); 
+        text-align: center;
+        z-index: 999;
+    }
+    
+
+    .img-completa {
+        width: 8vw;
+        object-fit: contain;
+    }
+    
+    .img-trabajos,
+    .img-servicios {
+        width: 8vw; 
+        
+        object-fit: contain; 
+    }
+
+    .logo-text {
+        padding-left: 2vw;
+        padding-top: 20%;
+        z-index: 2;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 900;
+        color: white;
+        font-size: 24pt; 
+        transition: opacity 0.5s ease; /
+    }
+
+    .image-links {
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        gap: 80px;
+        margin-top: 7px;
+    }
+
+    .content p {
+        padding-bottom: 30px;
+        text-align: center;
+        width: 800px;
+    }
+    .content {
+        align-items: center;
+        flex-direction: column;
+        display: flex;
+        width:100%;
+        height: 700px;
+        color: white;
+        background-color: black;
+        padding-top: 5px;
+        text-align: center;
+    }
+
+    .image-links1 {
+        flex-direction: column;
+        display: flex;
+        width: auto;
+        height: auto;
+
+        flex-wrap: wrap; 
+        gap: 30px;
+        padding: 0;            
+        margin: 0; 
+    }
+    
+    .img-completa1 {
+        width: 100%; 
+        height: 80px; 
+        object-fit: contain;
+    }
+    
+    .img-trabajos1,
+    .img-servicios1 {
+        width: 100%; 
+        height: 80px;
+        object-fit: contain; 
+    }
+
+    .image-links1 a {
+        height: 80px;
+    }
+    
+    .logo.fixed {
+        position: fixed;
+        top: 75px;
+        right: 0vw;
+        
+         
+    }
+}
+
+
+/* 768px */
+
+
+@media screen and (max-width: 768px) and (min-width:424px) {
+    
+    .nueva-seccion {
+        position: fixed; 
+        bottom: -100vh; 
+        width: 100%;
+        height: 15vh; 
+        background-color: white;
+        transition: bottom 0.5s ease; 
+        box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2); 
+        text-align: center;
+        z-index: 999;
+    }
+    
+
+    .img-completa {
+        width: 10vw;
+        object-fit: contain;
+    }
+    
+    .img-trabajos,
+    .img-servicios {
+        width: 10vw; 
+        
+        object-fit: contain; 
+    }
+
+    .logo-text {
+        padding-left: 2vw;
+        padding-top: 20%;
+        z-index: 2;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 900;
+        color: white;
+        font-size: 24pt; 
+        transition: opacity 0.5s ease; /
+    }
+
+    .image-links {
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        gap: 80px;
+        margin-top: 7px;
+    }
+
+    .content p {
+        padding-bottom: 10px;
+        text-align: center;
+        width: 400px;
+    }
+    .content {
+        align-items: center;
+        flex-direction: column;
+        display: flex;
+        width:100%;
+        height: 700px;
+        color: white;
+        background-color: black;
+        padding-top: 5px;
+        text-align: center;
+    }
+
+    .image-links1 {
+        flex-direction: column;
+        display: flex;
+        width: auto;
+        height: auto;
+
+        flex-wrap: wrap; 
+        gap: 30px;
+        padding: 0;            
+        margin: 0; 
+    }
+    
+    .img-completa1 {
+        width: 100%; 
+        height: 80px; 
+        object-fit: contain;
+    }
+    
+    .img-trabajos1,
+    .img-servicios1 {
+        width: 100%; 
+        height: 80px;
+        object-fit: contain; 
+    }
+
+    .image-links1 a {
+        height: 80px;
+    }
+
+    .logo-container {
+        background-color: black;
+        display: flex;
+        flex-direction: none; 
+        justify-content: center;
+        align-items: none;
+        height: 100vh;
+        position: relative;
+    }
+    
+    .logo.fixed {
+        position: fixed;
+        top: 30px;
+        right: 0vw;
+        left: 50px;
+        width: 700px; 
+    }
+}
+
+/* 425px */
+
+
+@media (max-width: 425px) {
+    
+    .nueva-seccion {
+        position: fixed; 
+        bottom: -100vh; 
+        width: 100%;
+        height: 15vh; 
+        background-color: white;
+        transition: bottom 0.5s ease; 
+        box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2); 
+        text-align: center;
+        z-index: 999;
+    }
+    
+
+    .img-completa {
+        width: 15vw;
+        object-fit: contain;
+    }
+    
+    .img-trabajos,
+    .img-servicios {
+        width: 15vw; 
+        
+        object-fit: contain; 
+    }
+
+    .logo-text {
+        padding-left: 2vw;
+        padding-top: 20%;
+        z-index: 2;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 900;
+        color: white;
+        font-size: 24pt; 
+        transition: opacity 0.5s ease; /
+    }
+
+    .image-links {
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        gap: 80px;
+        margin-top: 7px;
+    }
+
+    .content p {
+        padding-bottom: 30px;
+        text-align: center;
+        width: 350px;
+    }
+    .content {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        
+        width:100%;
+        height: 1050px;
+        color: white;
+        background-color: black;
+        padding-top: 5px;
+        text-align: center;
+    }
+
+    .image-links1 {
+        flex-direction: column;
+        display: flex;
+        width: 70%;
+        height: auto;
+
+        flex-wrap: wrap; 
+        gap: 30px;
+        padding: 0;            
+        margin: 0; 
+    }
+    
+    .img-completa1 {
+        width: 40%; 
+        height: 80px; 
+        object-fit: contain;
+    }
+    
+    .img-trabajos1,
+    .img-servicios1 {
+        width: 100%; 
+        height: 80px;
+        object-fit: contain; 
+    }
+
+    .image-links1 a {
+        height: 80px;
+    }
+
+    .logo-container {
+        background-color: black;
+        display: flex;
+        flex-direction: none; 
+        justify-content: center;
+        align-items: none;
+        height: 100vh;
+        position: relative;
+    }
+    
+    .logo.fixed {
+        overflow: hidden;
+        position: fixed;
+        top: 80px;
+        right: 0vw;
+        left: 4px;
+        width: 450px; 
+    }
+
+    .logo-text {
+        padding-left: 4vw;
+        padding-top: 50%;
+        z-index: 2;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 900;
+        color: white;
+        font-size: 24pt; 
+        transition: opacity 0.5s ease; /
+    }
+
+    .logo-container {
+        background-color: black;
+        display: flex;
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center;
+        height: 70vh;
+        position: relative;
+    }
+}

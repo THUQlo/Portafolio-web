@@ -1,0 +1,605 @@
+body {
+    cursor: none; 
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+
+.imagen-scroll {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    opacity: 0; 
+    transition: opacity 1s ease-in-out; 
+    z-index: 0; 
+}
+
+.imagen-scroll.visible {
+    opacity: 1; 
+}
+
+.imagen-scroll img {
+    height: 100%;
+}
+
+.content {
+    z-index: 2;
+}
+
+
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300; 
+}
+
+h1 {
+z-index: 5;
+}
+
+
+
+span {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900; 
+    z-index: 5;
+}
+
+a, button {
+    cursor: none; 
+}
+
+.custom-cursor {
+    position: fixed;
+    width: 20px; 
+    height: 20px; 
+    background-color: rgba(255, 255, 255, 0.7); 
+    border-radius: 50%; 
+    pointer-events: none; 
+    transition: width 0.2s ease, height 0.2s ease; 
+    z-index: 1000; 
+}
+
+.logo-container {
+    background-color: black;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+.logo {
+    font-size: 66px;
+    color: white;
+    width: 100%; 
+    text-align: center; 
+    transition: all 0.5s ease; 
+    position: absolute; 
+    top: 50%; 
+    transform: translateY(-50%); 
+}
+
+.logo-text { 
+    display: flex;
+    position: fixed; 
+    top: 20px; 
+    left: 30px; 
+    opacity: 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    color: white;
+    font-size: 24pt;
+    transition: opacity 0.5s ease;
+}
+
+.logo.fixed {
+    text-align: center;
+    position: fixed;
+    top: 20px;
+    right: 60px;
+    width: 100px; 
+    font-size: 30px;
+}
+
+.logo.fixed {
+    opacity: 1; 
+}
+
+.logo-text.fixed {
+    opacity: 100; 
+}
+
+
+.servicios-container {
+    gap: 20px;
+    flex-wrap: wrap;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 40%;
+    z-index: 10;
+    margin-bottom: 100px; 
+}
+
+
+.servicio {
+    filter: grayscale(100%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateX(-100px); 
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out, border 0.3s ease, transform 0.3s ease;
+    color: white;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    background-color: #222;
+    border: 2px solid transparent;
+    box-sizing: border-box;
+}
+
+
+.servicio:hover {
+    transform: translateY(-50%) scale(1.1);
+    border: 2px solid white;
+    filter: none; 
+    transform: scale(1.05); 
+}
+
+
+.servicio.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+.link-imagen {
+    position: fixed;
+    bottom: 20%; 
+    left: 50%;
+    transform: translateX(-50%); 
+    z-index: 10;
+    transition: transform 0.3s ease;
+}
+
+
+.imagen-enlace {
+    width: 60%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+
+.imagen-enlace:hover {
+    transform: scale(1.2); 
+}
+
+
+.content {
+    height: 1500px;
+    color: white;
+    background-color: black;
+    padding: 20px;
+    text-align: center;
+}
+
+.image-links {
+    display: flex;
+    justify-content: start;
+    gap: 35px;
+    
+}
+
+.img-completa,
+.img-trabajos,
+.img-servicios {
+    width: 50px; 
+    height: 50px;
+    object-fit: cover; 
+}
+
+.image-links a {
+    width: 50px; 
+    height: 50px;
+    display: block; 
+    overflow: hidden; 
+    background-color: black; 
+    transition: transform 0.3s ease; 
+}
+
+.image-links a:hover {
+    transform: scale(1.1); 
+}
+
+.nueva-seccion {
+    position: fixed; 
+    bottom: -100vh; 
+    left: 0;
+    width: 100%;
+    height: 5%; 
+    background-color: white;
+    transition: bottom 0.5s ease; 
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2); 
+    padding: 20px;
+    text-align: center;
+    z-index: 999; 
+}
+
+.nueva-seccion.visible {
+    bottom: 0; 
+}
+
+
+.new-button {
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease; 
+}
+
+.new-button img {
+    width: 90px; 
+    height: auto;
+}
+
+.new-button:hover {
+    transform: scale(1.1); 
+}
+
+
+.scroll-image-container {
+   text-align: center;
+    opacity: 0; 
+    position: relative;
+    transition: opacity 1s ease-out;
+}
+
+.scroll-image-container.show {
+    opacity: 1; 
+}
+
+.scroll-image-container.fixed {
+    position: fixed;
+    bottom: 15%; 
+    z-index: 1000;
+}
+
+.scroll-image {
+    transition: transform 0.3s ease; 
+    width: 50%;
+    object-fit: cover; 
+}
+
+
+.scroll-image:hover {
+    transform: scale(1.1); 
+}
+
+
+.servicio:hover {
+    transform: translateY(-50%) scale(1.1);
+    border: 2px solid white;
+}
+
+
+.servicio.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+.link-imagen {
+    position: fixed;
+    bottom: 20%; 
+    left: 50%;
+    transform: translateX(-50%); 
+    z-index: 10;
+    transition: transform 0.3s ease;
+}
+
+
+.imagen-enlace {
+    width: 60%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+
+.imagen-enlace:hover {
+    transform: scale(1.2); 
+}
+
+
+.content {
+    height: 1500px;
+    color: white;
+    background-color: black;
+    padding: 10px;
+    text-align: center;
+}
+
+.image-links {
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+    
+}
+
+.img-completa,
+.img-trabajos,
+.img-servicios {
+    width: 50px; 
+    height: 50px;
+    object-fit: cover; 
+}
+
+.image-links a {
+    width: 50px; 
+    height: 50px;
+    display: block; 
+    overflow: hidden; 
+    background-color: black; 
+    transition: transform 0.3s ease; 
+}
+
+.image-links a:hover {
+    transform: scale(1.1); 
+}
+
+.nueva-seccion {
+    position: fixed; 
+    bottom: -100vh; 
+    left: 0;
+    width: 100%;
+    height: 5%; 
+    background-color: white;
+    transition: bottom 0.5s ease; 
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2); 
+    padding: 20px;
+    text-align: center;
+    z-index: 999; 
+}
+
+.nueva-seccion.visible {
+    bottom: 0; 
+}
+
+
+.new-button {
+    display: flex;
+    align-items: center;
+    position: absolute; 
+    right: 4%; 
+    bottom: 20%; 
+    transition: transform 0.3s ease; 
+}
+
+.new-button img {
+    width: 90px; 
+    height: auto;
+}
+
+.new-button:hover {
+    transform: scale(1.1); 
+}
+
+
+.scroll-image-container {
+   text-align: center;
+    opacity: 0; 
+    position: relative;
+    transition: opacity 1s ease-out;
+}
+
+.scroll-image-container.show {
+    opacity: 1; 
+}
+
+.scroll-image-container.fixed {
+    position: fixed;
+    bottom: 15%; 
+    z-index: 1000;
+}
+
+.scroll-image {
+    transition: transform 0.3s ease; 
+    width: 50%;
+    object-fit: cover; 
+}
+
+
+.scroll-image:hover {
+    transform: scale(1.1); 
+}
+
+.image-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    z-index: 1000;
+}
+
+.image-overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    transition: transform 0.3s ease;
+}
+
+.servicio2 h2, .servicio2 p {
+    position: relative; 
+    z-index: 1; 
+    color: white; 
+}
+
+.image-overlay img:hover {
+    transform: scale(1.05);
+}
+
+.image-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    z-index: 1100;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover {
+    color: #ff5050;
+}
+
+
+.servicio1 {
+    background-image: url(../img/gojo.PNG);
+    background-size: cover;
+}
+
+.servicio2 {
+    background-position: center;
+    background-image: url(../img/Seraph.jpg);
+    background-size: cover;
+}
+
+.servicio3 {
+    background-color: black;
+    background-position: center;
+    background-image: url(../img/Nim.PNG);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.servicio4 {
+    background-position: center;
+    background-image: url(../img/MiCasa.png);
+    background-size: cover;
+}
+
+.servicio5 {
+    background-position: center;
+    background-image: url(../img/luffy.PNG);
+    background-size: cover;
+}
+
+.servicio6 {
+    background-color: black;
+    background-position: center;
+    background-image: url(../img/Beto.PNG);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {  
+    .new-button {
+        display: flex;
+        align-items: center;
+        position: absolute; 
+        right: 8%; 
+        bottom: 20%; 
+        transition: transform 0.3s ease; 
+    }
+
+    .servicios-container {
+        gap: 20px;
+        flex-wrap: wrap;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 60%;
+        z-index: 10;
+        margin-bottom: 100px; 
+    }
+    
+    
+    .servicio {
+        filter: grayscale(100%);
+        transition: filter 0.3s ease, transform 0.3s ease;
+        opacity: 0;
+        transform: translateX(-100px); 
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out, border 0.3s ease, transform 0.3s ease;
+        color: white;
+        padding: 20px;
+        width: 200px;
+        text-align: center;
+        background-color: #222;
+        border: 2px solid transparent;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 425px) {  
+    .new-button {
+        display: flex;
+        align-items: center;
+        position: absolute; 
+        right: 8%; 
+        bottom: 20%; 
+        transition: transform 0.3s ease; 
+    }
+
+    .servicios-container {
+        gap: 10px;
+        flex-wrap: wrap;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 80%;
+        z-index: 10;
+        margin-bottom: 100px; 
+    }
+    
+    
+    .servicio {
+        filter: grayscale(100%);
+        transition: filter 0.3s ease, transform 0.3s ease;
+        opacity: 0;
+        transform: translateX(-100px); 
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out, border 0.3s ease, transform 0.3s ease;
+        color: white;
+        padding: 20px;
+        width: 150px;
+        text-align: center;
+        background-color: #222;
+        border: 2px solid transparent;
+        box-sizing: border-box;
+    }
+
+    .new-button {
+        display: flex;
+        align-items: center;
+        position: absolute; 
+        right: 15%; 
+        bottom: 20%; 
+        transition: transform 0.3s ease; 
+    }
+}

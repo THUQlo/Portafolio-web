@@ -1,0 +1,395 @@
+body {
+    cursor: none; 
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+
+.imagen-scroll {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    opacity: 0; 
+    transition: opacity 1s ease-in-out; 
+    z-index: 4; 
+}
+
+.imagen-scroll.visible {
+    opacity: 4; 
+}
+
+.imagen-scroll img {
+    height: 100%;
+}
+
+.content {
+    z-index: 2;
+}
+
+
+
+p {
+    
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300; 
+}
+
+h1 {
+z-index: 5;
+}
+
+
+
+span {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900; 
+    z-index: 5;
+}
+
+a, button {
+    cursor: none; 
+}
+
+.custom-cursor {
+    position: fixed;
+    width: 20px; 
+    height: 20px; 
+    background-color: rgba(255, 255, 255, 0.7); 
+    border-radius: 50%; 
+    pointer-events: none; 
+    transition: width 0.2s ease, height 0.2s ease; 
+    z-index: 1000; 
+}
+
+.logo-container {
+    background-color: black;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+.logo {
+    font-size: 66px;
+    color: white;
+    width: 100%; 
+    text-align: center; 
+    transition: all 0.5s ease; 
+    position: absolute; 
+    top: 50%; 
+    transform: translateY(-50%); 
+}
+
+.logo-text { 
+    display: flex;
+    position: fixed; 
+    top: 20px; 
+    left: 30px; 
+    opacity: 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    color: white;
+    font-size: 24pt;
+    transition: opacity 0.5s ease;
+}
+
+.logo.fixed {
+    text-align: center;
+    position: fixed;
+    top: 20px;
+    right: 60px;
+    width: 100px; 
+    font-size: 30px;
+}
+
+.logo.fixed {
+    opacity: 1; /
+}
+
+.logo-text.fixed {
+    opacity: 100; 
+}
+
+
+.servicios-container {
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+    z-index: 10;
+    margin-bottom: 100px; 
+}
+
+
+.servicio {
+    font-size: 1.1vw;
+    opacity: 0;
+    transform: translateX(-100px); 
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out, border 0.3s ease, transform 0.3s ease;
+    color: white;
+    padding: 10px;
+    width: 30%;
+    height: 50%;
+    text-align: center;
+    background-color: #222;
+    border: 2px solid transparent;
+    box-sizing: border-box;
+}
+
+
+.servicio:hover {
+    transform: translateY(-50%) scale(1.1);
+    border: 2px solid white;
+}
+
+
+.servicio.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+.link-imagen {
+    position: fixed;
+    bottom: 20%; 
+    left: 50%;
+    transform: translateX(-50%); 
+    z-index: 10;
+    transition: transform 0.3s ease;
+}
+
+
+.imagen-enlace {
+    width: 60%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+
+.imagen-enlace:hover {
+    transform: scale(1.2); 
+}
+
+
+.content {
+    height: 1500px;
+    color: white;
+    background-color: black;
+    padding: 20px;
+    text-align: center;
+}
+
+.image-links {
+    display: flex;
+    justify-content: start;
+    gap: 35px;
+    
+}
+
+.img-completa,
+.img-trabajos,
+.img-servicios {
+    width: 50px; 
+    height: 50px;
+    object-fit: cover; 
+}
+
+.image-links a {
+    width: 50px; 
+    height: 50px;
+    display: block; 
+    overflow: hidden; 
+    background-color: black; 
+    transition: transform 0.3s ease; 
+}
+
+.image-links a:hover {
+    transform: scale(1.1); 
+}
+
+.nueva-seccion {
+    position: fixed; 
+    bottom: -100vh; 
+    left: 0;
+    width: 100%;
+    height: 5%; 
+    background-color: white;
+    transition: bottom 0.5s ease; 
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2); 
+    padding: 20px;
+    text-align: center;
+    z-index: 999; 
+}
+
+.nueva-seccion.visible {
+    bottom: 0; 
+}
+
+
+.new-button {
+    display: flex;
+    align-items: center;
+    position: absolute; 
+    right: 3%; 
+    bottom: 20%; 
+    transition: transform 0.3s ease; 
+}
+
+.new-button img {
+    width: 90px; 
+    height: auto;
+}
+
+.new-button:hover {
+    transform: scale(1.1); 
+}
+
+
+.scroll-image-container {
+   text-align: center;
+    opacity: 0; 
+    position: relative;
+    transition: opacity 1s ease-out;
+}
+
+.scroll-image-container.show {
+    opacity: 1; 
+}
+
+.scroll-image-container.fixed {
+    position: fixed;
+    bottom: 15%; 
+    z-index: 1000;
+}
+
+.scroll-image {
+    transition: transform 0.3s ease; 
+    width: 50%;
+    object-fit: cover; 
+}
+
+
+.scroll-image:hover {
+    transform: scale(1.1); 
+}
+
+@media (max-width: 768px) { 
+
+    .servicios-container {
+        gap: 40PX ;
+        flex-wrap: wrap;
+        position: fixed;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 80%;
+        z-index: 10;
+        margin-bottom: 100px; 
+    }
+    
+    
+    .servicio {
+        font-size: 1.6vw;
+        opacity: 0;
+        transform: translateX(-100px); 
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out, border 0.3s ease, transform 0.3s ease;
+        color: white;
+        padding: 50px;
+        width: 60%;
+        height: 50%;
+        text-align: center;
+        background-color: #222;
+        border: 2px solid transparent;
+        box-sizing: border-box;
+    }
+    
+    .new-button {
+        display: flex;
+        align-items: center;
+        position: absolute; 
+        right: 8%; 
+        bottom: 20%; 
+        transition: transform 0.3s ease; 
+    }
+}
+
+@media (max-width: 425px) { 
+
+    .servicios-container {
+        gap: 70px;
+        flex-wrap: wrap;
+        position: fixed;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 50%;
+        z-index: 10;
+        margin-bottom: 100px; 
+    }
+    
+    
+    .servicio {
+        font-size: 2.1vw;
+        opacity: 0;
+        transform: translateX(-100px); 
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out, border 0.3s ease, transform 0.3s ease;
+        color: white;
+        padding: 40px;
+        width: 50%;
+        height: 30%;
+        text-align: center;
+        background-color: #222;
+        border: 2px solid transparent;
+        box-sizing: border-box;
+    }
+    
+    .new-button {
+        display: flex;
+        align-items: center;
+        position: absolute; 
+        right: 15%; 
+        bottom: 20%; 
+        transition: transform 0.3s ease; 
+    }
+    .scroll-image-container {
+        text-align: center;
+         opacity: 0; 
+         position: relative;
+         transition: opacity 1s ease-out;
+     }
+     
+     .scroll-image-container.show {
+         opacity: 1; 
+     }
+     
+     .scroll-image-container.fixed {
+         position: fixed;
+         bottom: 15%; 
+         z-index: 1000;
+     }
+     
+     .scroll-image {
+         transition: transform 0.3s ease; 
+         width: 80%;
+         object-fit: cover; 
+     }
+     
+}
