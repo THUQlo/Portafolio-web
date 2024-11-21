@@ -284,7 +284,7 @@ a, button {
     transform: scale(1.1); 
 }
 
-@media (max-width: 768px) { 
+@media (max-width: 768px) and (min-width:424px) { 
 
     .servicios-container {
         gap: 40PX ;
@@ -327,7 +327,7 @@ a, button {
     }
 }
 
-@media (max-width: 425px) { 
+@media (max-width: 425px) and (min-width:320px) { 
 
     .servicios-container {
         gap: 70px;
